@@ -10,24 +10,22 @@ namespace GameProject.Concrete
 {
     internal class SaleManager : ISaleService
     {
-        public void Sell(Customer customer, Game game, Campaign campaign = null)
+        public void Sell(Customer customer, Game game, Campaign campaign)
         {
-            if (campaign != null)
-            {
-                Console.WriteLine("Kampanya uygulandı : " + campaign.Name);
-                Console.WriteLine("Satış işlemleri devam ediyor...");
-                Console.WriteLine("Oyun : " + game.Name);
-                Console.WriteLine("Müşteri : " + customer.FirstName );
-                Console.WriteLine("Satış başarıyla gerçekleşti");
+            Console.WriteLine("Kampanya uygulandı : " + campaign.Name);
+            Console.WriteLine("Satış işlemleri devam ediyor...");
+            Console.WriteLine("Oyun : " + game.Name);
+            Console.WriteLine("Müşteri : " + customer.FirstName );
+            Console.WriteLine("Satış başarıyla gerçekleşti");
+        }
 
-            }
-            else
-            {
-                Console.WriteLine("Satış işlemleri devam ediyor...");
-                Console.WriteLine("Oyun : " + game.Name);
-                Console.WriteLine("Müşteri : " + customer.FirstName);
-                Console.WriteLine("Satış başarıyla gerçekleşti");
-            }
+        public void Sell(Customer customer, Game game)
+        {
+            Console.WriteLine("Satış işlemleri devam ediyor...");
+            Console.WriteLine("Oyun : " + game.Name);
+            Console.WriteLine("Müşteri : " + customer.FirstName);
+            Console.WriteLine("Satış başarıyla gerçekleşti");
+            
         }
     }
 }
